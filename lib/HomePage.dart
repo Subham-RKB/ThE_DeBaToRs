@@ -1,6 +1,10 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:thedebators/loginpage.dart';
 import './main.dart';
+import './loginpage.dart';
 
 class HomePage extends StatefulWidget {
   //const HomePage({ Key? key }) : super(key: key);
@@ -17,9 +21,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         height: 80,
         //minWidth: 70,
-        onPressed: () {
-          //startSignIn();
-        },
+        onPressed: () {},
         color: pc,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
