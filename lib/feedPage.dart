@@ -18,20 +18,38 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
+  bool _showFab = true;
+  bool _showNotch = true;
   FloatingActionButtonLocation _fabLocation =
-      FloatingActionButtonLocation.endDocked;
+      FloatingActionButtonLocation.centerDocked;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Home"),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Menu',
+          onPressed: () {},
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.notification_add),
+            tooltip: 'Notification',
+            onPressed: () {},
+          )
+        ],
+      ),
       backgroundColor: bg,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),
         tooltip: 'Post',
       ),
+      floatingActionButtonLocation: _fabLocation,
       bottomNavigationBar: _BottomAppBarr(
         fabLocation: _fabLocation,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
       ),
     );
   }
@@ -40,7 +58,7 @@ class _FeedPageState extends State<FeedPage> {
 class _BottomAppBarr extends StatelessWidget {
   //_BottomAppBar const ({ Key? key }) : super(key: key);
   _BottomAppBarr({
-    this.fabLocation = FloatingActionButtonLocation.endDocked,
+    this.fabLocation = FloatingActionButtonLocation.centerDocked,
     this.shape = const CircularNotchedRectangle(),
   });
   final FloatingActionButtonLocation fabLocation;
@@ -53,12 +71,12 @@ class _BottomAppBarr extends StatelessWidget {
         //child: IconTheme( colors:Theme.of(context).colorScheme.onPrimary),
         child: Row(
           children: <Widget>[
-            Container(height: 75.0),
+            Container(height: 60.0),
             IconButton(
               tooltip: 'Home',
               icon: const Icon(
                 Icons.home,
-                size: 40,
+                size: 30,
               ),
               color: Colors.white,
               onPressed: () {},
