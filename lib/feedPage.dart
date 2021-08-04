@@ -1,37 +1,33 @@
-import 'dart:html';
-
-import 'package:flutter/material.dart';
-import 'package:thedebators/loginpage.dart';
-import './HomePage.dart';
-import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:thedebators/loginpage.dart';
 import './main.dart';
-//import './loginpage.dart';
+import './sidemenu.dart';
 
 class FeedPage extends StatefulWidget {
   //const FeedPage({ Key? key }) : super(key: key);
-
   @override
   _FeedPageState createState() => _FeedPageState();
 }
 
 class _FeedPageState extends State<FeedPage> {
-  bool _showFab = true;
-  bool _showNotch = true;
   FloatingActionButtonLocation _fabLocation =
       FloatingActionButtonLocation.centerDocked;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: SideMenu(),
+      ),
       appBar: AppBar(
         title: Text("Home"),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Menu',
-          onPressed: () {},
-        ),
+        leading:
+            IconButton(icon: Icon(Icons.menu), tooltip: 'Menu', onPressed: () {}
+                //Drawer(child: SideMenu());
+                // Navigator.push(
+                //     this.context,
+                //     MaterialPageRoute(
+                //         builder: (BuildContext context) => SideMenu()))
+                ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.notification_add),
