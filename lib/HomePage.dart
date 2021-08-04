@@ -1,5 +1,4 @@
-import 'dart:js';
-
+import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:thedebators/loginpage.dart';
@@ -21,7 +20,12 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         height: 80,
         //minWidth: 70,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            this.context,
+            MaterialPageRoute(builder: (context) => loginpage()),
+          );
+        },
         color: pc,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

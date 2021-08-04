@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thedebators/loginpage.dart';
 import './HomePage.dart';
+import './feedPage.dart';
 
 void main() => runApp(MyApp());
 final Color bg = Color(0xFF888CE4);
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //home: HomePage(),
       routes: {
-        '/': (_) => HomePage(),
+        '/': (_) => FeedPage(),
         '/loginpage': (_) => loginpage(),
+        '/FeedPage': (_) => FeedPage(),
       },
     );
   }
