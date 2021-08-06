@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //home: HomePage(),
       routes: {
-        '/': (_) => FeedPage(),
+        '/': (_) => loginpage(),
         '/loginpage': (_) => loginpage(),
         '/FeedPage': (_) => FeedPage(),
       },

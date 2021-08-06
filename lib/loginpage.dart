@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:thedebators/feedPage.dart';
+import 'package:thedebators/firebase/authentication.dart';
 import './main.dart';
 import './HomePage.dart';
 
@@ -11,6 +13,10 @@ class loginpage extends StatefulWidget {
 }
 
 class _loginpageState extends State<loginpage> {
+  final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
   Widget _button(String textt) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 60),
@@ -18,9 +24,9 @@ class _loginpageState extends State<loginpage> {
         elevation: 0,
         height: 80,
         //minWidth: 70,
-        onPressed: () {
+        onPressed: () async {
           //startSignIn();
-          loginpage();
+          if (_formKey.currentState.validate()) {}
         },
         color: pc,
         child: Row(
@@ -45,37 +51,49 @@ class _loginpageState extends State<loginpage> {
         body: Container(
           width: MediaQuery.of(context).size.width,
           child: Center(
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 200,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(25),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Username',
-                      hintText: 'Username',
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 200,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(25),
+                    child: TextFormField(
+                      validator: (val) => val.isEmpty ? 'Enter an Email' : null,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Username',
+                        hintText: 'Username',
+                      ),
+                      onChanged: (val) {
+                        setState(() => email = val);
+                      },
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(25),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
-                      hintText: 'Password',
+                  Padding(
+                    padding: EdgeInsets.all(25),
+                    child: TextFormField(
+                      validator: (val) =>
+                          val.length < 8 ? 'Passcode must be 6+' : null,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Password',
+                        hintText: 'Password',
+                      ),
+                      onChanged: (val) {
+                        setState(() => password = val);
+                      },
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                _button('LogIn'),
-              ],
+                  SizedBox(
+                    height: 50,
+                  ),
+                  _button('LogIn'),
+                ],
+              ),
             ),
           ),
         ));
