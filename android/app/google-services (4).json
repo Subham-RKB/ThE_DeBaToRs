@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "673530940661",
+    "project_id": "thedebators-e4645",
+    "storage_bucket": "thedebators-e4645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673530940661:android:68f1cb04debada139809bc",
+        "android_client_info": {
+          "package_name": "com.example.thedebators"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673530940661-fens2dmo5k822gk916nr7nmjh95pmevt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk5xvpbUWCvhTVvvvJuoO3fdVTGgCEjdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673530940661-fens2dmo5k822gk916nr7nmjh95pmevt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
