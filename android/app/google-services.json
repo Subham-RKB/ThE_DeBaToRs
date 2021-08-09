@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "673530940661",
-    "project_id": "thedebators-e4645",
-    "storage_bucket": "thedebators-e4645.appspot.com"
+    "project_number": "525855884958",
+    "project_id": "fir-auth-470b2",
+    "storage_bucket": "fir-auth-470b2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:673530940661:android:68f1cb04debada139809bc",
+        "mobilesdk_app_id": "1:525855884958:android:b05cf23c52bb7528f91d8f",
         "android_client_info": {
           "package_name": "com.example.thedebators"
         }
-      },
+      }, 
       "oauth_client": [
         {
-          "client_id": "673530940661-fens2dmo5k822gk916nr7nmjh95pmevt.apps.googleusercontent.com",
+          "client_id": "525855884958-tiv72eoo93jaks578p3s5r6pa636pegc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBk5xvpbUWCvhTVvvvJuoO3fdVTGgCEjdQ"
+          "current_key": "AIzaSyBlbsxdUSxDMqdtre0j_X9qzJPindaihI0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "673530940661-fens2dmo5k822gk916nr7nmjh95pmevt.apps.googleusercontent.com",
+              "client_id": "525855884958-tiv72eoo93jaks578p3s5r6pa636pegc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

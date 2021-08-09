@@ -17,6 +17,7 @@ class _loginpageState extends State<loginpage> {
   final _formKey = GlobalKey<FormState>();
   String email = '';
   String password = '';
+  String error = '';
   Widget _button(String textt) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 60),
@@ -26,7 +27,14 @@ class _loginpageState extends State<loginpage> {
         //minWidth: 70,
         onPressed: () async {
           //startSignIn();
-          if (_formKey.currentState.validate()) {}
+          if (_formKey.currentState.validate()) {
+            // print(email);
+            // print(password);
+            dynamic result = await _auth.registerWithEmail(email, password);
+            if (result == null) {
+              setState(() => {error = 'Please supply a valid email'});
+            }
+          }
         },
         color: pc,
         child: Row(
@@ -92,6 +100,11 @@ class _loginpageState extends State<loginpage> {
                     height: 50,
                   ),
                   _button('LogIn'),
+                  SizedBox(height: 12.0),
+                  Text(
+                    error,
+                    style: TextStyle(color: Colors.red, fontSize: 14.0),
+                  )
                 ],
               ),
             ),
